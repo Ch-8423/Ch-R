@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <conio.h>
+int main(void)
+{
+    int senha;
+    int s=1;
+    int senha2;
+    int n=0;
+    int sair=1;
+    float v=0;
+    float neg=0;
+
+    printf("\n ==BEM VINDO AO CHARLES ANDERSON BANK!!==\n");
+                //Código criado por Charles Anderson aluno ADS
+    printf("\n==CRIE UMA SENHA COM ATE 6 DIGITOS==\n");
+
+    do
+    {
+
+        scanf("%d", &senha);
+        system("cls"); 
+        if(senha>999999)
+        {
+            printf("Sua senha deve ter no maximo 6 digitos!!");
+        }
+    }while(senha>999999);
+
+    s = s*senha;
+             //Código criado por Charles Anderson aluno ADS
+    if(s==senha)
+    {
+        printf("\n **Sua senha foi salva com sucesso**");
+        printf("\n\nDigite o valor do deposito: ");
+        scanf("%d", &n);
+
+        printf("Digite a senha para saque:");
+
+        do
+        {
+            //Código criado por Charles Anderson aluno ADS
+            scanf("%d", &senha2);
+
+            if(senha2!=senha)
+            {
+                printf("\nAtencao senha invalida!!\n\nDigite a sua senha\n");
+            }
+        }while(senha2!=senha);
+
+        printf("\nSenha correta, caixa esta aberto =)\n");
+        printf("Saldo atual é de\n==> R$%d", n);
+        printf("\nDigite o valor para saque: ");
+
+        do
+        {
+            scanf("%.2f", &v); 
+          //Código criado por Charles Anderson aluno ADS
+            neg = v - n;
+
+            if(v>n)
+            {
+                printf("\nSaldo negativo!!\nDigite um valor valido\n");                
+            }
+        }while(v>n);
+
+        printf("\nSaque realizado com sucesso!!!\nO novo saldo é de\n==>R$%.2f\n", neg);
+
+         //Código criado por Charles Anderson aluno ADS
+        printf("\n\nMuito obrigado e volte sempre\n\n");
+    }
+    getch();
+}
